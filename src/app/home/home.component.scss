@@ -1,0 +1,290 @@
+a {
+  color: var(--color3);
+}
+
+.typewriter {
+ width:fit-content;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid var(--color3); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    padding-bottom: 5px;
+}
+
+::ng-deep {
+  // --backgroundPositionX:50%;
+  .rtl {
+    .first-section{
+      direction:ltr;
+    }
+  }
+}
+.first-section {
+  @media (min-width: 576px) {
+   --imageMaxWidth:50%;
+    flex-flow: row;
+    --backgroundPositionX:100%;//-200%;
+    }
+    @media (max-width: 575px) {
+      --imageMaxWidth:100%;
+      --backgroundPositionX:75%;
+        .image-box{
+          height: 35%;
+          .content{
+            background-position-y:0%;
+            background-size: 100% auto;
+            .content2{
+              background-position-y:0%;
+              background-size: 100% auto;
+            }
+            // &:before{
+            //   transform: scale(-1);
+            // }
+          }
+        }
+      }
+  .content {
+    background-position: top right 10px;
+    background-size: auto 100%;
+    background-image: url(/assets/images/cbg1.png);
+    // background-size: auto;
+    background-attachment: fixed;
+    // background-position: center;
+    font-size: 30px;
+    font-weight: bold;
+    animation: bgPosition 2s forwards;
+    // filter: grayscale(100%);
+  }
+  .content2{
+    background-image: url(/assets/images/cbg2.png);
+    width: 100%;
+    height: 100%;
+    background-position: top right 0px;
+    background-size: auto 100%;
+    animation: bgPosition 2s forwards,color 2s forwards 3s ;
+    background-attachment: fixed;
+    
+  }
+
+  .image-box {
+    width: 200px;
+    animation: changeWidth1 2s linear;
+    animation-fill-mode: forwards;
+    border-style: solid;
+    border-width: 0px 3px;
+  }
+  .last-column {
+    width: 100px;
+    animation: changeWidth2 2s linear;
+    animation-fill-mode: forwards;
+  }
+}
+.header {
+  .bold {
+    font-size: 70px;
+  }
+  background-color: var(--color1);
+  color: var(--color4);
+}
+.info {
+  background-color: var(--color2);
+  padding: 200px 0px;
+}
+
+.projects {
+  background-color: var(--color1);
+}
+.step-1 {
+  background-color: var(--color3);
+}
+
+.step-2 {
+  background-color: var(--color2);
+}
+
+.step-3 {
+  background-color: var(--color4);
+}
+
+.step {
+  border-radius: 20px;
+  padding: 10px;
+  height: 100%;
+}
+
+section {
+  padding: 40px 0px;
+}
+section:not(:last) {
+  margin-bottom: 20px;
+}
+.exp {
+  background-color: var(--color1);
+  .company-logo {
+    border-top-right-radius: 10px;
+    right: 10px !important;
+    opacity: 0.8
+  }
+}
+.technologies {
+  @for $i from 1 through 40 {
+    .tech:nth-child(#{$i}) {
+      animation: scale 2500ms (#{$i * 600}ms) ease-in-out infinite;
+    }
+  }
+  .tech {
+    background-color: var(--color2);
+    padding: 15px;
+    border-radius: 15px;
+  }
+}
+.squares {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .square {
+    width: 100px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 100px !important;
+    text-align: center;
+    padding: 0px;
+  }
+  :nth-child(3n + 1).square {
+    background-color: var(--color1) !important;
+  }
+  :nth-child(3n + 2) {
+    background-color: var(--color2) !important;
+  }
+  :nth-child(3n + 3) {
+    background-color: var(--color4) !important;
+  }
+}
+
+.recommendation {
+  border-radius: 0px;
+  background-color: var(--color3);
+  padding-bottom: 100px !important;
+  img {
+    border-radius: 100%;
+    border: 2px solid var(--color2);
+  }
+  .card-text{
+    min-height: 60px;
+  }
+}
+
+.footer {
+  background-color: var(--color4);
+}
+.credits{
+  background-color:var(--color1);
+}
+.contact {
+  background-color: var(--color2);
+  .fa {
+    transition: all 0.3s;
+    border: 1px solid var(--color4);
+    border-radius: 100%;
+    padding: 10px;
+  }
+
+  .fa:hover,
+  .fa:active {
+    background-color: var(--color1);
+    // transform:scale(1.2);
+  }
+}
+
+@keyframes color {
+  0% {
+    opacity: 1;
+    // filter: grayscale(100%);
+   //  background-image: url(/assets/images/cbg2.png);
+  }
+  100% {
+    opacity: 0;
+    // filter: grayscale(0%);
+   // background-image: url(/assets/images/cbg1.png);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  75% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes changeWidth1 {
+  0% {
+    width: 20%;
+  }
+  25% {
+    width: 30%;
+  }
+  50% {
+    width: 40%;
+  }
+  75% {
+    width: 25%;
+  }
+  100% {
+    //width: 50%;
+    width: var(--imageMaxWidth);
+    border-width: 0px;
+  }
+}
+
+@keyframes changeWidth2 {
+  0% {
+    width: 80%;
+  }
+  25% {
+    width: 70%;
+  }
+  50% {
+    width: 20%;
+  }
+  75% {
+    width: 30%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes bgPosition {
+  from {
+    background-position-x: 50%;
+  }
+  to {
+    background-position-x: var(--backgroundPositionX);
+  }
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--color3); }
+}

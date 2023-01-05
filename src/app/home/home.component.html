@@ -1,0 +1,156 @@
+<div class="row9 h-100 flex-parent first-section">
+  <!-- <div class="col header text-center d-flex">
+    <h1 class="align-self-center text-center w-100 fade-down">
+      <img src="/assets/images/logo.png" style="width: 70px" /><br /><br />
+      Hi! I'm<br />
+      <span class="bold">Rivky Rubin</span><br /><span
+        >A freelancer developer</span
+      >
+    </h1>
+  </div>
+  <div class="col-sm-6 p-0">
+    <div class="content h-100"></div>
+  </div> -->
+
+  <div class="header text-center d-flex flex-content hidden-sm4 order-sm-1 order-2">
+    <h1 *ngIf="showName" class="align-self-center text-center w-100 fade-down">
+      <img src="/assets/images/logo.png" style="width: 130px" /><br /><br />
+      <span class="bold name">{{ "name" | translate }}</span
+      ><br /><span class="" [innerHtml]="'description' | translate"></span>
+    </h1>
+  </div>
+  <div class="p-0 flex-narrow image-box order-sm-2  order-1">
+    <div class="content h-100 position-relative">
+      <div class="position-absolute content2"></div>
+    </div>
+  </div>
+  <div class="flex-narrow last-column order-md-3"></div>
+</div>
+
+<section class="info">
+  <div class="row m-0 fade-up" *inView>
+    <div class="col-sm-8 offset-sm-2">
+      <div class="text-center">
+        <span class="">{{ "about" | translate }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <div class="container-fluid"> -->
+
+<section class="projects">
+  <div *inView class="fade-down text-center">
+    <h2>{{ "myProjects" | translate }}</h2>
+    <div>
+      <a routerLink="/plany" routerLinkActive="active">
+        <img
+          src="/assets/images/plany/plany-logo.png"
+          style="width: 70px"
+        /><br />Plany
+      </a>
+      <!-- Planny: <a href="https://www.plany.com/" target="_blank">{{'visit' | translate}}</a> -->
+    </div>
+  </div>
+</section>
+
+<section class="technologies text-center">
+  <div *inView>
+    <h2>{{ "skills" | translate }}</h2>
+    <div class="row9 d-flex squares gx-1 gy-1 fade-down">
+      <div
+        *ngFor="let tech of technologies"
+        class="tech p-0 square glass-bg d-flex m-1"
+      >
+        <span class="align-self-center text-center w-100">{{ tech }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="exp">
+  <div *inView>
+    <div class="fade-up text-center container-fluid">
+      <h2>{{ "experience" | translate }}</h2>
+      <div class="row gy-2 same-height">
+        <div class="col-sm-4" *ngFor="let exp of experiences; let i = index">
+          <div class="step-{{ i + 1 }} step position-relative">
+            <img
+              src="/assets/images/companies/{{ exp.name }}.jpg"
+              class="position-absolute company-logo end-0"
+              style="width: 30px"
+            />
+            <h3>{{ exp.name }}</h3>
+            <div class="dates">{{ exp.years }}</div>
+            <div class="details" [innerHtml]="exp.description"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="recommendations text-center">
+  <div *inView>
+    <h2>{{ "recommendations" | translate }}</h2>
+    <div class="row9 fade-down mb-4">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let re of recommendations; let i = index">
+          <div class="picsum-img-wrapper9">
+            <div class="card recommendation p-3 text-center">
+              <div class="cord-body">
+                <img
+                  src="/assets/images/recommendations/{{ re.name }}.jpg"
+                  style="width: 100px"
+                />
+
+                <div class="card-title">{{ re.name }}</div>
+                <div class="card-text">{{ re.description }}</div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="carousel-caption">
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div> -->
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</section>
+
+<section class="credits text-center">
+  <div *inView class="fade-down">
+    <h2>{{ "credits" | translate }}</h2>
+    <a
+      target="_blank"
+      href="https://www.freepik.com/free-photo/branding-copyright-design-spaceship-graphic-concept_16449598.htm#page=5&query=office%20computer&position=7&from_view=search&track=sph"
+      >Image by rawpixel.com</a
+    >
+    on Freepik
+  </div>
+</section>
+<section class="contact text-center">
+  <div *inView class="fade-down">
+    <h2>{{ "contact" | translate }}</h2>
+    <a
+      href="https://www.linkedin.com/in/rivky-rubin-748700175"
+      target="_blank"
+      class="deco-none me-2"
+      ><i class="fa fa-linkedin" aria-hidden="true"></i
+    ></a>
+    <a
+      href="mailto:rivkyrubin2@gmail.com"
+      target="_blank"
+      class="deco-none me-2"
+      ><i class="fa fa-envelope" aria-hidden="true"></i
+    ></a>
+    <a
+      href="whatsapp://send?phone=+972546778203"
+      target="_blank"
+      class="deco-none me-2"
+      ><i class="fa fa-whatsapp" aria-hidden="true"></i
+    ></a>
+  </div>
+</section>
+
+<div class="footer text-center p-3">
+  <span>{{ "footer" | translate }}</span>
+</div>

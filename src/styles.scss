@@ -1,1 +1,169 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+ // background-color:var(--color3) !important;
+ background: linear-gradient(149deg, var(--color1) 0%, var(--color2) 35%, var(--color3) 64%, var(--color4) 100%);
+
+}
+body {
+  margin: 0;
+//   font-family: "ShanderaRegular", "Helvetica Neue", sans-serif;
+}
+:root {
+    // --color1: #FFB3B3; 
+    // --color2:#FFDBA4; 
+    // --color3:#FFE9AE;
+    // --color4: #C1EFFF;
+    --color1: #F7ECDE; 
+    --color2:#E9DAC1; 
+    --color3:#9ED2C6;
+    --color4: #54BAB9;
+    // --color1: #EFF5F5; 
+    // --color2:#D6E4E5; 
+    // --color3:#497174;
+    // --color4: #EB6440;
+  } 
+  .gredient-bg{
+    background: linear-gradient(149deg, var(--color1) 0%, var(--color2) 35%, var(--color3) 64%, var(--color4) 100%);
+  }
+  .glass-bg{
+    /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+.flex-parent {
+    display: flex !important;
+    flex-flow: column;
+    height: 100%;
+  }
+  .flex-parent.horizonal {
+    flex-flow: row;
+  }
+  .flex-header,
+  .flex-narrow {
+    flex: 0 1 auto;
+  }
+  
+  .flex-content {
+    flex: 1 1 auto;
+    position: relative;
+    overflow: auto !important;
+    overflow-y: hidden;
+  }
+  
+  .flex-footer {
+    flex: 0 1 40px;
+  }
+  
+  .layout-container{
+    min-height: 100%;
+    height: 100%;
+    padding:0px !important;
+    //overflow: scroll;
+} 
+
+.row.same-height{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+        flex-wrap: wrap;
+
+       > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+      }
+}
+a.deco-none {
+  color: inherit !important;
+  text-decoration: inherit;
+ :link {
+  color: inherit !important;
+  text-decoration: inherit;
+}
+:hover {
+  color: inherit !important;
+  text-decoration: inherit;
+}
+}
+
+@font-face {
+    font-family: "Bogart";
+    src: local("Bogart"), url(./assets/fonts/Bogart-Regular.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "BogartBold";
+    src: local("Bogart"), url(./assets/fonts/Bogart-Bold.ttf) format("truetype");
+  }
+  
+//   * {
+//     font-family: "Bogart", sans-serif !important; 
+//     /* Add !important to overwrite all elements */
+//   }
+//   *.bold{
+//     font-family: "BogartBold", sans-serif !important; 
+//   }
+
+  .fade-down{
+    animation: fadeDown 1s forwards;
+  }
+  
+  
+  @keyframes fadeDown {
+    0% {
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  100% {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  }
+
+  .fade-up{
+    animation: fadeUp 1s;
+  }
+  
+  
+  @keyframes fadeUp {
+    0% {
+        filter: alpha(opacity=0);
+        opacity: 0;
+        -webkit-transform: translateY(50%);
+        -moz-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        -o-transform: translateY(50%);
+        transform: translateY(50%);
+    }
+    100% {
+        filter: alpha(opacity=100);
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+  }
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+@media (min-width: 576px){
+.col-sm-8{
+width: 66.66666667%;
+}
+}
