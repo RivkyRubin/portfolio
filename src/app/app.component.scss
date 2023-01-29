@@ -1,13 +1,31 @@
 .lang{
+    transform-origin: 100% 50%;
+    animation: scaleX 1s forwards;
     z-index: 3;
-    color:#fff;
-    padding: 10px 23px !important;
+    color: #fff;
+    background-color: var(--color3);
+    margin: 10px 0px;
     .btn-link{
         color:#fff !important;
-        padding:0px 3px;
+        padding: 5px 10px;
+        border-radius: 0px;
+        width: 100%;
     }
-    .active{
+    .active{ 
+        background-color:var(--color4);
         text-decoration: none;
         font-weight: bold;
     }
 }
+.footer {
+    background-color: var(--color1);
+  }
+
+  @keyframes scaleX {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+  }

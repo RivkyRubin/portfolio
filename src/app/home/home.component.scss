@@ -10,9 +10,52 @@ a {
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
-    typing 3.5s steps(40, end),
+    typing 3.5s steps(40, end) ,
     blink-caret .75s step-end infinite;
     padding-bottom: 5px;
+}
+.scroll-down{
+  color:var(--color1);
+  animation: moveUpDown 2s linear infinite;
+  bottom:20px;
+
+  .fa{
+  //transform: scaleX(1.5);
+  opacity: 0.8; 
+   padding:15px;
+  background-color:var(--color4);
+  border-radius: 50%;
+  }
+}
+
+.brackets{
+  width:30px;
+  margin-top:-30px;
+  opacity: 0;
+}
+.brackets.left{
+    animation: bracket-left 2s forwards 1s;
+}
+.brackets.right{
+      animation: bracket-right 2s forwards 1s;
+}
+.platforms{
+  transform-origin: 0% 50%;
+  opacity: 0;
+  color: #fff;
+    bottom: 17px;
+    border-right: 7px solid var(--color4);
+    font-size:1rem;
+    animation: scalePlatforms 1s forwards;
+    animation-delay: 0.5;
+.platform{
+   background-color:var(--color3);
+   text-align: center;
+   padding: 5px 10px;
+}
+// :nth-child(even).platform{
+//   background-color:var(--color4);
+// }
 }
 
 ::ng-deep {
@@ -21,15 +64,65 @@ a {
     .first-section{
       direction:ltr;
     }
+    .typewriter{
+      border:none;
+      animation:none;
+    }
+    .platforms{
+      border-left: 7px solid var(--color4);
+      border-right:0px !important;
+    }
+  }
+  .carousel-control-next,.carousel-control-prev{
+    width:5% !important;
   }
 }
+
+.plany-project{
+  border: 2px solid var(--color2);
+    margin: 10px;
+    padding: 15px;
+    z-index: -2;
+}
+.plany-project::before{
+  content: "";
+  position: absolute;
+  background: var(--color1);
+  width: 100%;
+  height: 100%;
+  top: -3px;
+  /* left: -2px; */
+  z-index: -1;
+  transform: rotate(34deg);
+}
+.plany-btn{
+  background-color:var(--color4);
+  border:none;
+  transition: all 1s;
+}
+.plany-btn:hover,.plany-btn:active{
+  background-color:var(--color3);
+}
 .first-section {
+  .desc2{
+    max-width: 476px;
+  }
   @media (min-width: 576px) {
    --imageMaxWidth:50%;
     flex-flow: row;
     --backgroundPositionX:100%;//-200%;
     }
     @media (max-width: 575px) {
+      .scroll-down{
+        bottom:5px;
+        .fa{
+        padding:8px;
+        }
+      }
+      .desc2{
+        font-size:14px;
+        max-width: 280px;
+      }
       --imageMaxWidth:100%;
       --backgroundPositionX:75%;
         .image-box{
@@ -50,22 +143,23 @@ a {
   .content {
     background-position: top right 10px;
     background-size: auto 100%;
-    background-image: url(/assets/images/cbg1.png);
+    background-image: url(/assets/images/cbg1.jpg);
+    background-color:var(--color4);
     // background-size: auto;
     background-attachment: fixed;
     // background-position: center;
     font-size: 30px;
     font-weight: bold;
-    animation: bgPosition 2s forwards;
+     animation: bgPosition 2s forwards;
     // filter: grayscale(100%);
   }
   .content2{
-    background-image: url(/assets/images/cbg2.png);
+    background-image: url(/assets/images/cbg2.jpg);
     width: 100%;
     height: 100%;
     background-position: top right 0px;
     background-size: auto 100%;
-    animation: bgPosition 2s forwards,color 2s forwards 3s ;
+     animation: bgPosition 2s forwards,color 2s forwards 3s ;
     background-attachment: fixed;
     
   }
@@ -97,6 +191,7 @@ a {
 
 .projects {
   background-color: var(--color1);
+  overflow: hidden;
 }
 .step-1 {
   background-color: var(--color3);
@@ -154,32 +249,38 @@ section:not(:last) {
     text-align: center;
     padding: 0px;
   }
-  :nth-child(3n + 1).square {
+  :nth-child(4n + 1).square {
     background-color: var(--color1) !important;
   }
-  :nth-child(3n + 2) {
+  :nth-child(4n + 2).square {
     background-color: var(--color2) !important;
   }
-  :nth-child(3n + 3) {
+  :nth-child(4n + 3).square {
+    background-color: var(--color3) !important;
+  }
+  :nth-child(4n + 4).square {
     background-color: var(--color4) !important;
   }
 }
 
 .recommendation {
   border-radius: 0px;
-  background-color: var(--color3);
+  background-color: var(--color2);
   padding-bottom: 100px !important;
   img {
     border-radius: 100%;
     border: 2px solid var(--color2);
   }
+  .card-title{
+    line-height: 80%;
+    .job-type{
+    font-size: 80%;
+  }
+  }
+  
   .card-text{
     min-height: 60px;
   }
-}
-
-.footer {
-  background-color: var(--color4);
 }
 .credits{
   background-color:var(--color1);
@@ -272,12 +373,19 @@ section:not(:last) {
 @keyframes bgPosition {
   from {
     background-position-x: 50%;
+    filter:blur(20px);
   }
   to {
     background-position-x: var(--backgroundPositionX);
+    filter:blur(0px);
   }
 }
 
+@keyframes moveUpDown {
+  0% { transform: translateY(0);}
+  50% { transform: translateY(-5px);  }
+  100% { transform: translateY(0); }
+}
 
 @keyframes typing {
   from { width: 0 }
@@ -288,3 +396,57 @@ section:not(:last) {
   from, to { border-color: transparent }
   50% { border-color: var(--color3); }
 }
+
+@keyframes bracket-left {
+  0% {
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%) rotate(50deg);
+}
+100% {
+
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+}
+
+@keyframes bracket-right {
+  0% {
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%) rotate(-50deg);
+}
+100% {
+
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+}
+
+@keyframes scalePlatforms {
+  from {
+    opacity: 1;
+      transform: scaleX(0);
+      border-width:0px
+  }
+  to {
+    opacity: 1;
+      transform: scaleX(1);
+      border-width:7px;
+  }
+}
+

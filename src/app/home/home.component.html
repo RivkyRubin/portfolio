@@ -14,24 +14,36 @@
 
   <div class="header text-center d-flex flex-content hidden-sm4 order-sm-1 order-2">
     <h1 *ngIf="showName" class="align-self-center text-center w-100 fade-down">
-      <img src="/assets/images/logo.png" style="width: 130px" /><br /><br />
-      <span class="bold name">{{ "name" | translate }}</span
-      ><br /><span class="" [innerHtml]="'description' | translate"></span>
-    </h1>
+      <div><img src="/assets/images/newlogo2.png" style="width: 130px" /></div>
+       <img src="/assets/images/left.png" width="30px" class="brackets left"><span class="bold name text-dark">{{ "name" | translate }}</span> <img width="30px" src="/assets/images/right.png" class="brackets right" >
+     
+      <br /><h3 class="typewriter9" [innerHtml]="'description' | translate"></h3>
+<h4 class="typewriter desc2" [innerHtml]="'description2' | translate"></h4>
+    </h1> <div class="position-absolute text-center w-100 scroll-down " *ngIf="showScroll">
+    <i class="fat fa fa-thin fa-chevron-down fa-2xl " aria-hidden="true"></i
+      > 
+  </div>
   </div>
   <div class="p-0 flex-narrow image-box order-sm-2  order-1">
     <div class="content h-100 position-relative">
-      <div class="position-absolute content2"></div>
+      <div class="platforms position-absolute start-0" *ngIf="showName">
+        <div class=" platform">{{ "apps" | translate }}</div>
+        <div class=" platform">{{ "websites" | translate }}</div>
+        <div class=" platform">{{ "programs" | translate }}</div>
+      </div>
+      <div class="position-absolute content2"  >
+        
+      </div>
     </div>
   </div>
   <div class="flex-narrow last-column order-md-3"></div>
+ 
 </div>
-
 <section class="info">
   <div class="row m-0 fade-up" *inView>
     <div class="col-sm-8 offset-sm-2">
       <div class="text-center">
-        <span class="">{{ "about" | translate }}</span>
+        <span [innerHtml]="'about' | translate"></span> 
       </div>
     </div>
   </div>
@@ -41,14 +53,23 @@
 <section class="projects">
   <div *inView class="fade-down text-center">
     <h2>{{ "myProjects" | translate }}</h2>
-    <div>
+    <div class="d-flex justify-content-center plany-project gap-sm-3 gap- position-relative">
       <a routerLink="/plany" routerLinkActive="active">
+      
         <img
           src="/assets/images/plany/plany-logo.png"
           style="width: 70px"
-        /><br />Plany
+        />
       </a>
+      <div><h3>Plany</h3><span>{{'eventsManager' | translate}}</span></div>
+      <div class="align-self-center"> <a routerLink="/plany" routerLinkActive="active"> 
+         <button class="btn btn-primary plany-btn">
+          {{'readMore' | translate}}
+        </button>
+    
+      </a>  </div>
       <!-- Planny: <a href="https://www.plany.com/" target="_blank">{{'visit' | translate}}</a> -->
+
     </div>
   </div>
 </section>
@@ -56,7 +77,7 @@
 <section class="technologies text-center">
   <div *inView>
     <h2>{{ "skills" | translate }}</h2>
-    <div class="row9 d-flex squares gx-1 gy-1 fade-down">
+    <div class="d-flex squares gx-1 gy-1 fade-down">
       <div
         *ngFor="let tech of technologies"
         class="tech p-0 square glass-bg d-flex m-1"
@@ -71,7 +92,7 @@
     <div class="fade-up text-center container-fluid">
       <h2>{{ "experience" | translate }}</h2>
       <div class="row gy-2 same-height">
-        <div class="col-sm-4" *ngFor="let exp of experiences; let i = index">
+        <div class="col-sm-6" *ngFor="let exp of experiences; let i = index">
           <div class="step-{{ i + 1 }} step position-relative">
             <img
               src="/assets/images/companies/{{ exp.name }}.jpg"
@@ -80,7 +101,7 @@
             />
             <h3>{{ exp.name }}</h3>
             <div class="dates">{{ exp.years }}</div>
-            <div class="details" [innerHtml]="exp.description"></div>
+            <div class="details" [innerHtml]="exp.description | translate"></div>
           </div>
         </div>
       </div>
@@ -89,8 +110,8 @@
 </section>
 <section class="recommendations text-center">
   <div *inView>
-    <h2>{{ "recommendations" | translate }}</h2>
-    <div class="row9 fade-down mb-4">
+    <h2>{{ "testimonials" | translate }}</h2>
+    <div class="p-3 pt-0 fade-down">
       <ngb-carousel>
         <ng-template ngbSlide *ngFor="let re of recommendations; let i = index">
           <div class="picsum-img-wrapper9">
@@ -101,8 +122,9 @@
                   style="width: 100px"
                 />
 
-                <div class="card-title">{{ re.name }}</div>
-                <div class="card-text">{{ re.description }}</div>
+                <div class="card-title">{{ re.name }}<br/><span class="job-type">{{re.title}}</span></div>
+
+                <div class="card-text"  [innerHtml]="re.description | translate"></div>
               </div>
             </div>
           </div>
@@ -117,7 +139,7 @@
 </section>
 
 <section class="credits text-center">
-  <div *inView class="fade-down">
+  <div *inView class="fade-up">
     <h2>{{ "credits" | translate }}</h2>
     <a
       target="_blank"
@@ -150,7 +172,3 @@
     ></a>
   </div>
 </section>
-
-<div class="footer text-center p-3">
-  <span>{{ "footer" | translate }}</span>
-</div>

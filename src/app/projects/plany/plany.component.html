@@ -1,14 +1,15 @@
 <div class="text-center">
-  <span class="position-absolute start-0">
-    <a class="home-link p-3 m-3" [routerLink]="['']">Home</a></span
+  <span class="position-absolute start-0 home-link">
+    <a class="" [routerLink]="['']"><i class="fa fa-home pe-1" aria-hidden="true"></i
+      >{{ "home" | translate }}</a></span
   >
   <img
     src="/assets/images/plany/plany-logo.png"
     style="width: 100px"
     class="mt-3 fade-down"
   />
-  <h1>Plany</h1>
-  <h2 class="description typewriter" > {{"plany-description" | translate}}</h2>
+  <h1 class="">Plany</h1>
+  <h2 class="description">{{ "plany-description" | translate }}</h2>
   <section class="mobile-carousel">
     <!-- <div class="mobile-carousel row">
       <div class="col text-center">
@@ -29,50 +30,66 @@
       </div>
     </div> -->
     <div class="smartphone">
-        <div class="content">
-          <ngb-carousel [showNavigationArrows]="showNavigationArrows">
-            <ng-template ngbSlide *ngFor="let re of images; let i = index">
-              <div class="picsum-img-wrapper9">
-                <img src="/assets/images/plany/mobile/{{ re }}.png" class="w-100" />
-              </div>
-              <!-- <div class="carousel-caption">
+      <div class="content">
+        <ngb-carousel [showNavigationArrows]="showNavigationArrows">
+          <ng-template ngbSlide *ngFor="let re of images; let i = index">
+            <div class="picsum-img-wrapper9">
+              <img
+                src="/assets/images/plany/mobile/{{ re }}.png"
+                class="w-100"
+              />
+            </div>
+            <!-- <div class="carousel-caption">
                               <h3>First slide label</h3>
                               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                           </div> -->
-            </ng-template>
-          </ngb-carousel>
-        </div>
+          </ng-template>
+        </ngb-carousel>
       </div>
+    </div>
   </section>
   <section>
     <div class="content row m-0">
-        <div class="col-sm-8 offset-sm-2">
-        <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="wide-screen">
+      <div class="col-sm-8 offset-sm-2">
+        <ngb-carousel
+          [showNavigationArrows]="showNavigationArrows"
+          class="wide-screen"
+        >
           <ng-template ngbSlide *ngFor="let re of wideImages; let i = index">
             <div class="picsum-img-wrapper9">
-              <img src="/assets/images/plany/wide-screen/{{ re }}.png" class="w-100" />
+              <img
+                src="/assets/images/plany/wide-screen/{{ re }}.png"
+                class="w-100"
+              />
             </div>
-            <!-- <div class="carousel-caption">
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </div> -->
           </ng-template>
         </ngb-carousel>
-        </div>
       </div>
-  </section>
-  <!-- <div class="laptop">
-    <div class="content">
-      <ngb-carousel [showNavigationArrows]="showNavigationArrows">
-        <ng-template ngbSlide *ngFor="let re of images; let i = index">
-          <div class="picsum-img-wrapper9">
-            <img src="/assets/images/plany/{{ re }}.png" class="w-100" />
-          </div>
-        </ng-template>
-      </ngb-carousel>
     </div>
-  </div> -->
-  <a href="https://www.eventsplany.com/" target="_blank" class="btn primary-btn mb-3 p-3 w-50">{{
-    "visit" | translate
-  }}</a>
+  </section>
+  <div class=" text-center  d-flex justify-content-center">
+    <h4 class="col-md-8 col-12">
+      I developed it with .NetCore, C#, Entity Framework, SQL
+      Server, Angular, Type Script, Scss, Bootstrap
+    </h4>
+  </div>
+
+  <div>
+    <a
+      href="https://github.com/RivkyRubin/plany"
+      target="_blank"
+      class="git-link"
+      ><i class="fa fa-github" aria-hidden="true"></i> Github</a
+    >
+  </div>
+  <div class="row m-0">
+    <div class="col-sm-6 col-12 offset-sm-3">
+      <a
+        href="https://www.eventsplany.com/"
+        target="_blank"
+        class="btn primary-btn p-3 mt-3 mb-3 w-100"
+        >{{ "visit" | translate }}</a
+      >
+    </div>
+  </div>
 </div>

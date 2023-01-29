@@ -3,12 +3,12 @@
     {
       "name": "Biomedia",
       "years": "2014 - 2015",
-      "description": "Develop websites using c#, MVC, Entity Framework, Jquery, Html5, Bootstrap, Nopcommerce, Umbraco"
+      "description": "translateBiomedia"
     },
     {
       "name": "Verifone",
       "years": "2015 - 2022",
-      "description": "Develop systems For Verifone using .Net Core, c#, Nhibernate, Sql Server, My Sql, Angular, Html5, Css3, Bootstrap etc. <br/> I was responsible on a huge system which contains milions or rows. i developed for big companies systems like a green invoice, applications ,by myself "
+      "description": "translateVerifone"
     }
   ],
   "technologies": [
@@ -38,34 +38,13 @@
   ],
   "recommendations": [
     {
-      "name": "Lilach Ben Itzchak",
-      "title": "Manager",
-      "description": "dfklfdjfkdl jdklfjdfkl djfdklf jdkfldjsf kldsfjdklfjd skfld;jf kdlfjk dl;fjdkl"
-    },
-    {
       "name": "Gadi Toledano",
-      "title": "Manager",
-      "description": "dfksldjfd kldjfdklfsjd kdjf;sdkfj kdlfjdsklf;jd kfdj;fkdl;fjdkl jdkfl;djfkdjf; dklfjd;l"
-    },
+      "title": "Technology Manager",
+      "description": "recommendationGadi" },
     {
-        "name": "Lilach Ben Itzchak",
-        "title": "Manager",
-        "description": "ddkjslfdjfkld;fj dkf;jdflkdjf kldf;jdklf jd"
-      },
-      {
-        "name": "Gadi Toledano",
-        "title": "Manager",
-        "description": "dfdj dkfld;fj kdfjskdfjdk;lf jdkf;sjdfkdfljdkfjd"
-      },
-      {
-        "name": "Lilach Ben Itzchak",
-        "title": "Manager",
-        "description": "dfjdklfdjf dklfjdfklsd;jfkld jfkdl; jdkfdfierenfdlkfdjf dkldfkjd"
-      },
-      {
-        "name": "Gadi Toledano",
-        "title": "Manager",
-        "description": "Rivky is dfjdklfjs dklfdjfkl sjreijf kdljfdklfj"
-      }
+        "name": "Ehud Lahav",
+        "title": "Team Leader",
+        "description": "recommendationEhud"    
+        }
   ]
 }

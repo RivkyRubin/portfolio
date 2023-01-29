@@ -1,8 +1,5 @@
-import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, Scroll } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { delay, filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +16,7 @@ export class AppComponent {
     translate.setDefaultLang('en');
 //this.setScrolToTopRoutes();    
   }
-  title = 'personal';
+  title = 'Rivky Rubin';
   translateLanguageTo(lang: string) {
     this.translate.use(lang);
   }

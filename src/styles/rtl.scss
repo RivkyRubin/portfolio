@@ -1,20 +1,24 @@
-.rtl{
-    direction: rtl;
-    @media (min-width: 576px) {
+.rtl {
+  direction: rtl;
+  @media (min-width: 576px) {
     .offset-sm-2 {
-        margin-right: 16.66666667%;
-      }
+      margin-right: 16.66666667%;
     }
-      .me-2 {
-        margin-left: 0.5rem !important;
-        margin-left: 0rem !important;
-      }
-      .end-0 {
-        left: 0 !important;
-        right:auto !important;
-      }
-      .start-0{
-        right: 0 !important;
-        left:auto !important;
-      }
+    .offset-sm-3 {
+      margin-right: 25%;
+    }
+  }
+
+  .me-2 {
+    margin-left: 0.5rem !important;
+    margin-left: 0rem !important;
+  }
+  .end-0 {
+    left: 0 !important;
+    right: auto !important;
+  }
+  .start-0 {
+    right: 0 !important;
+    left: auto !important;
+  }
 }

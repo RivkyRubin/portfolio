@@ -1,18 +1,36 @@
-.home-link{
+.git-link{
     color:#fff;
 }
-.home-link:hover{
- text-decoration: none;
- background-color:#fff;
- border-radius: 50%;
- color:var(--color2);
+.home-link{
+  padding: 10px !important;
+  top:10px;
+  a{
+    color: #fff;
+    background-color:var(--color3);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+
+  }
 }
+// .home-link:hover{
+//  text-decoration: none;
+//  background-color:#fff;
+//  border-radius: 50%;
+//  color:var(--color2);
+// }
 
-
+h1.typewriter{
+    max-width: 112px ;
+}
+.git-link{
+  font-size: 20px;
+  
+}
 .typewriter {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid var(--color3); /* The typwriter cursor */
-   // white-space: nowrap; /* Keeps the content on a single line */
+    white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     // letter-spacing: .15em; 
     animation: 
@@ -162,7 +180,7 @@
 
 @keyframes skew {
     from {
-        transform: skew(-88deg, -1deg);
+        transform: skew(-10deg, -1deg);
     }
     to {
         transform: skew(0);
