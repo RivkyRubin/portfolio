@@ -91,6 +91,14 @@ a.deco-none {
 }
 
 @font-face {
+  font-family: "HebrewLight";
+  src: local("Hebrew"), url(./assets/fonts/hebrew/IBMPlexSansHebrew-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "HebrewRegular";
+  src: local("Hebrew"), url(./assets/fonts/hebrew/IBMPlexSansHebrew-Regular.ttf) format("truetype");
+}
+@font-face {
     font-family: "Bogart";
     src: local("Bogart"), url(./assets/fonts/Bogart-Regular.ttf) format("truetype");
   }
@@ -100,10 +108,9 @@ a.deco-none {
     src: local("Bogart"), url(./assets/fonts/Bogart-Bold.ttf) format("truetype");
   }
   
-//   * {
-//     font-family: "Bogart", sans-serif !important; 
-//     /* Add !important to overwrite all elements */
-//   }
+*:not(.fa) {
+     font-family: "HebrewRegular", sans-serif !important; 
+   }
 //   *.bold{
 //     font-family: "BogartBold", sans-serif !important; 
 //   }

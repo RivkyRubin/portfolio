@@ -12,11 +12,11 @@ export class PlanyComponent implements OnInit {
    wideImages:number[]
    showNavigationArrows=false;
   constructor(private meta:Meta,private title:Title) {
-    this.meta.addTags([
-      {name: 'description', content: 'Plany is a website for managing events easily'},
-      {name: 'author', content: 'Rivky Rubin'},
-      {name: 'keywords', content: 'Plany, events planner, todo list'}
-    ]);
+    // this.meta.addTags([
+    //   {name: 'description', content: 'Plany is a website for managing events easily'},
+    //   {name: 'author', content: 'Rivky Rubin'},
+    //   {name: 'keywords', content: 'Plany, events planner, todo list'}
+    // ]);
     this.title.setTitle('Plany - Events Planner')
    }
 

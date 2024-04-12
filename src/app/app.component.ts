@@ -10,10 +10,10 @@ export class AppComponent {
 
   constructor(  public translate: TranslateService)
   {
-    translate.addLangs(['en','he']);
+    translate.addLangs(['he','en']);
     // Set default language
-    translate.currentLang='en';
-    translate.setDefaultLang('en');
+    translate.currentLang='he';
+    translate.setDefaultLang('he');
 //this.setScrolToTopRoutes();    
   }
   title = 'Rivky Rubin';

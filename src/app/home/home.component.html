@@ -12,67 +12,140 @@
     <div class="content h-100"></div>
   </div> -->
 
-  <div class="header text-center d-flex flex-content hidden-sm4 order-sm-1 order-2">
+  <div
+    class="header text-center d-flex flex-content hidden-sm4 order-sm-1 order-2"
+  >
     <h1 *ngIf="showName" class="align-self-center text-center w-100 fade-down">
       <div><img src="/assets/images/newlogo2.png" style="width: 130px" /></div>
-       <img src="/assets/images/left.png" width="30px" class="brackets left"><span class="bold name text-dark">{{ "name" | translate }}</span> <img width="30px" src="/assets/images/right.png" class="brackets right" >
-     
-      <br /><h3 class="typewriter9" [innerHtml]="'description' | translate"></h3>
-<h4 class="typewriter desc2" [innerHtml]="'description2' | translate"></h4>
-    </h1> <div class="position-absolute text-center w-100 scroll-down " *ngIf="showScroll">
-    <i class="fat fa fa-thin fa-chevron-down fa-2xl " aria-hidden="true"></i
-      > 
+      <img
+        src="/assets/images/left.png"
+        width="30px"
+        class="brackets left"
+      /><span class="bold name text-dark">{{ "name" | translate }}</span>
+      <img width="30px" src="/assets/images/right.png" class="brackets right" />
+
+      <br />
+      <h3 class="typewriter9" [innerHtml]="'description' | translate"></h3>
+      <h4
+        class="typewriter desc2"
+        [innerHtml]="'description2' | translate"
+      ></h4>
+    </h1>
+    <div
+      class="position-absolute text-center w-100 scroll-down"
+      *ngIf="showScroll"
+      (click)="scrollDown()"
+    >
+      <div>{{ "testimonials" | translate }}</div>
+      <i class="fat fa fa-thin fa-chevron-down fa-2xl" aria-hidden="true"></i>
+    </div>
   </div>
-  </div>
-  <div class="p-0 flex-narrow image-box order-sm-2  order-1">
+  <div class="p-0 flex-narrow image-box order-sm-2 order-1">
     <div class="content h-100 position-relative">
+      <!-- <div id="screen">
+      <img src="/assets/images/screen.gif" width="300" />
+    </div> -->
       <div class="platforms position-absolute start-0" *ngIf="showName">
-        <div class=" platform">{{ "apps" | translate }}</div>
-        <div class=" platform">{{ "websites" | translate }}</div>
-        <div class=" platform">{{ "programs" | translate }}</div>
+        <div class="platform">{{ "apps" | translate }}</div>
+        <div class="platform">{{ "websites" | translate }}</div>
+        <div class="platform">{{ "programs" | translate }}</div>
       </div>
-      <div class="position-absolute content2"  >
-        
-      </div>
+      <!-- <div class="position-absolute content2"></div> -->
     </div>
   </div>
   <div class="flex-narrow last-column order-md-3"></div>
- 
 </div>
 <section class="info">
   <div class="row m-0 fade-up" *inView>
+    <!-- <div class="profile-img"> 
+    
+  </div>-->
     <div class="col-sm-8 offset-sm-2">
       <div class="text-center">
-        <span [innerHtml]="'about' | translate"></span> 
+        <span [innerHtml]="'about' | translate"></span>
       </div>
     </div>
   </div>
 </section>
 <!-- <div class="container-fluid"> -->
 
-<section class="projects">
-  <div *inView class="fade-down text-center">
+<!-- <section class="projects" id="my-projects">
+  <div *inView class="fade-down9 text-center">
     <h2>{{ "myProjects" | translate }}</h2>
-    <div class="d-flex justify-content-center plany-project gap-sm-3 gap- position-relative">
-      <a routerLink="/plany" routerLinkActive="active">
+    <div class="projects-list position-relative">
       
-        <img
-          src="/assets/images/plany/plany-logo.png"
-          style="width: 70px"
-        />
-      </a>
-      <div><h3>Plany</h3><span>{{'eventsManager' | translate}}</span></div>
-      <div class="align-self-center"> <a routerLink="/plany" routerLinkActive="active"> 
-         <button class="btn btn-primary plany-btn">
-          {{'readMore' | translate}}
-        </button>
-    
-      </a>  </div>
-      <!-- Planny: <a href="https://www.plany.com/" target="_blank">{{'visit' | translate}}</a> -->
-
+      <div class="row">
+        <div class="col-sm-6 p-0 fade-down project" *ngFor="let project of projects" >
+          <div class="project-box">
+         <div class="proect-content p-3">
+            <div class="logo">
+            <a
+              routerLink="/{{ project.name }}"
+              routerLinkActive="active"
+              class=""
+            >
+              <img
+                src="/assets/images/{{ project.name.toLowerCase() }}/{{
+                  project.name.toLowerCase()
+                }}-logo.png"
+          
+              />
+            </a>
+          </div>
+          <div class="p-3">
+            {{ project.description | translate }}
+          </div> 
+          <div class="colors-section p-3">
+          <div class="colors">
+            <div *ngFor="let color of project.colors"  class="project-color">
+              <i class="fa fa-tint" aria-hidden="true"[style.color]="'#'+color"></i>
+            </div></div>
+          </div>
+          <div class="justify-content-center pt-3">
+            <a
+            *ngIf="project.link == null"
+            routerLink="/{{ project.name.toLowerCase() }}"
+            routerLinkActive="active"
+            class=""
+          >
+            <button class="btn btn-primary plany-btn9 blob-btn">
+              {{ "readMore" | translate }}
+              <span class="blob-btn__inner">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                </span>
+              </span>
+            </button>
+          </a>
+          <a
+            *ngIf="project.link != null"
+            href="{{ project.link }}"
+            target="_blank"
+          >
+            <button class="btn btn-primary plany-btn9 blob-btn">
+              {{ "visit" | translate }}
+              <span class="blob-btn__inner">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                </span>
+              </span>
+            </button>
+          </a>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+   
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="technologies text-center">
   <div *inView>
@@ -101,14 +174,17 @@
             />
             <h3>{{ exp.name }}</h3>
             <div class="dates">{{ exp.years }}</div>
-            <div class="details" [innerHtml]="exp.description | translate"></div>
+            <div
+              class="details"
+              [innerHtml]="exp.description | translate"
+            ></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="recommendations text-center">
+<section class="recommendations text-center" id="testimonials">
   <div *inView>
     <h2>{{ "testimonials" | translate }}</h2>
     <div class="p-3 pt-0 fade-down">
@@ -122,9 +198,16 @@
                   style="width: 100px"
                 />
 
-                <div class="card-title">{{ re.name }}<br/><span class="job-type">{{re.title}}</span></div>
+                <div class="card-title">
+                  {{ re.name }}<br /><span class="job-type">{{
+                    re.title
+                  }}</span>
+                </div>
 
-                <div class="card-text"  [innerHtml]="re.description | translate"></div>
+                <div
+                  class="card-text"
+                  [innerHtml]="re.description | translate"
+                ></div>
               </div>
             </div>
           </div>
@@ -135,18 +218,6 @@
         </ng-template>
       </ngb-carousel>
     </div>
-  </div>
-</section>
-
-<section class="credits text-center">
-  <div *inView class="fade-up">
-    <h2>{{ "credits" | translate }}</h2>
-    <a
-      target="_blank"
-      href="https://www.freepik.com/free-photo/branding-copyright-design-spaceship-graphic-concept_16449598.htm#page=5&query=office%20computer&position=7&from_view=search&track=sph"
-      >Image by rawpixel.com</a
-    >
-    on Freepik
   </div>
 </section>
 <section class="contact text-center">
@@ -165,10 +236,20 @@
       ><i class="fa fa-envelope" aria-hidden="true"></i
     ></a>
     <a
-      href="whatsapp://send?phone=+972546778203"
+      href="whatsapp://send?phone=+972527178860"
       target="_blank"
       class="deco-none me-2"
       ><i class="fa fa-whatsapp" aria-hidden="true"></i
     ></a>
+    <div class="pt-2">{{ "phone" | translate }}</div>
   </div>
 </section>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+      <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+    </filter>
+  </defs>
+</svg>
