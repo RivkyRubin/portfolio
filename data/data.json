@@ -130,8 +130,12 @@
       "description":"פיתוח מאפס של מערכות ניהול ותוכנות חכמות,\nשימוש בטכנולוגיות מובילות",
       "imagesLength":5,
       "images":[{
-        "id":1,
-        "size":"half"
+        "id":7,
+        "size":"full"
+      },
+      {
+        "id":8,
+        "size":"full"
       },  
       {       
          "id":3,
